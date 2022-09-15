@@ -1,4 +1,5 @@
+import { Button } from 'antd'
 const Layout = () => {
-    return <div>layout</div>
+    return <div><Button type="primary">Button</Button></div>
 }
 export default Layout
