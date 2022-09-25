@@ -21,7 +21,7 @@ function App() {
               <Layout />
             </AuthComponents>
           } >
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/article" element={<Article />} />
             <Route path="/publish" element={<Publish />} />
           </Route>

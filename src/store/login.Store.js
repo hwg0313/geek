@@ -1,5 +1,5 @@
 import { makeAutoObservable } from "mobx";
-import { http, setToken, getToken, } from "@/utils";
+import { http, setToken, getToken, remiveToken } from "@/utils";
 class LoginStore {
     token = getToken() || ""
     constructor() {
@@ -15,6 +15,10 @@ class LoginStore {
         this.token = res.data.token
         setToken(this.token)
 
+    }
+    loginOut = () => {
+        this.token = ''
+        remiveToken()
     }
 }
 export default LoginStore
