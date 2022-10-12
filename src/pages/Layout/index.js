@@ -14,10 +14,12 @@ const { Header, Sider } = Layout
 
 const GeekLayout = () => {
     const { pathname } = useLocation()
-    const { userStore, loginStore } = useStore()
+    const { userStore, loginStore, channelStore } = useStore()
+    useEffect(() => { }, [pathname])
     useEffect(() => {
-        userStore.getUasrInfo()
-    }, [userStore])
+        userStore.getUasrInfo()//获取身份信息
+        channelStore.loadChannelList()//获取频道数据
+    }, [userStore, channelStore])
     // 确定退出登录
     const navigate = useNavigate()
     const onConfirm = () => {

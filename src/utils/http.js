@@ -2,7 +2,7 @@
 //实例化，请求拦截器，响应拦截器
 import axios from "axios";
 import { getToken } from "./token";
-
+import { history } from "./history";
 const http = axios.create({
     baseURL: 'http://geek.itheima.net/v1_0',
     timeout: 5000
@@ -27,7 +27,7 @@ http.interceptors.response.use((response) => {
     // 超出 2xx 范围的状态码都会触发该函数。
     // 对响应错误做点什么
     if (error.response.status === 401) {
-        console.log(123);
+        history.push("/login")
     }
     return Promise.reject(error)
 })
