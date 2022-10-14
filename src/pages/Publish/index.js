@@ -83,6 +83,7 @@ const Publish = () => {
                 return file
             }
         })
+
         setFileList(formatList)
         //图片存入暂存仓库
         cacheImgList.current = formatList
